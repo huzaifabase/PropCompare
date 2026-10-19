@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-950: #0a1628;
+  --navy-900: #0f1e33;
+  --accent: #10b981;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink antialiased;
+}
+
+::selection {
+  background: #10b981;
+  color: #fff;
+}
+
+/* Visible focus for keyboard users */
+:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Article body typography */
+.prose-custom h2 {
+  @apply mt-8 text-xl font-bold text-ink;
+}
+.prose-custom h3 {
+  @apply mt-6 text-lg font-bold text-ink;
+}
+.prose-custom p {
+  @apply mt-4 leading-relaxed text-slate-700;
+}
+.prose-custom ul {
+  @apply mt-4 list-disc space-y-2 pl-6 text-slate-700;
+}
+.prose-custom ol {
+  @apply mt-4 list-decimal space-y-2 pl-6 text-slate-700;
+}
+.prose-custom a {
+  @apply text-accent-dark underline hover:text-accent;
+}
+.prose-custom strong {
+  @apply font-semibold text-ink;
+}
